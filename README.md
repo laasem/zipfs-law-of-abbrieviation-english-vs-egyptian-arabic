@@ -10,11 +10,11 @@ source .env/bin/activate
 python3 script.py
 ```
 
-**Warning:** Script loads large datasets into memory.
+to run script in a virtual environment. Please note that the script loads large datasets into memory and so takes some time to complete.
 
 When done, run `source .env/bin/deactivate` to deactivate virtual environment.
 
 ## Credits
-Developed as part of the NLP course of the Universitat Pompeu Fabra's Master in Theoretical and Applied Linguistics taught by Professor Thomas Brochhagen.
-
 Wikipedia dataset used available [here](https://huggingface.co/datasets/wikimedia/wikipedia).
+
+Developed as part of the NLP course of the Universitat Pompeu Fabra's Master in Theoretical and Applied Linguistics taught by Professor Thomas Brochhagen.
