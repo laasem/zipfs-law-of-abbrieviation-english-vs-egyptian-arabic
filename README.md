@@ -20,7 +20,7 @@ to run script in a local virtual environment.
 
 When done, run `source .env/bin/deactivate` to deactivate virtual environment.
 
-Please note that the script loads large datasets into memory and takes some time to complete, so running on a cloud environment like Google Colab with GPU runtime might be preferable.
+Please note that the script loads large datasets into memory and takes some time to complete, so running on a cloud environment like Google Colab with a GPU runtime might be preferable.
 
 ## Credits
 Developed as part of the NLP course of the Universitat Pompeu Fabra's Master in Theoretical and Applied Linguistics taught by Professor Thomas Brochhagen.
