@@ -16,9 +16,11 @@ source .env/bin/activate
 python3 script.py
 ```
 
-to run script in a virtual environment. Please note that the script loads large datasets into memory and takes some time to complete - running on a cloud environment like Google Colab with GPU runtime would be helpful.
+to run script in a local virtual environment.
 
 When done, run `source .env/bin/deactivate` to deactivate virtual environment.
+
+Please note that the script loads large datasets into memory and takes some time to complete, so running on a cloud environment like Google Colab with GPU runtime might be preferable.
 
 ## Credits
 Developed as part of the NLP course of the Universitat Pompeu Fabra's Master in Theoretical and Applied Linguistics taught by Professor Thomas Brochhagen.
