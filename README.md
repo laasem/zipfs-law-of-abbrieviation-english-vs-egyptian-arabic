@@ -16,7 +16,7 @@ source .env/bin/activate
 python3 script.py
 ```
 
-to run script in a virtual environment. Please note that the script loads large datasets into memory and takes some time to complete - running on a cloud environment like Google Colab would be helpful.
+to run script in a virtual environment. Please note that the script loads large datasets into memory and takes some time to complete - running on a cloud environment like Google Colab with GPU runtime would be helpful.
 
 When done, run `source .env/bin/deactivate` to deactivate virtual environment.
 
