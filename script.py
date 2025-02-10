@@ -40,7 +40,7 @@ def load_dataframe(language_iso_code):
   dataframe = dataset.to_pandas()
   return dataframe['text']
 
-# Define a function that, given a text, a Spacy nlp model, and a dict,
+# Define a function that, given a text, a spacy nlp model, and a dict,
 # populates the dict with the unique token types present in the text
 # and their frequency counts.
 # To do so, the function first tokenizes and normalizes tokens
@@ -73,6 +73,21 @@ def plot(type_to_freq):
   plt.ylabel('log(frequency)')
   plt.show()
 
+# Since there is no out-of-the-box spacy equivalent to en_core_web_sm
+# for Egyptian Arabic, we need to manually define one based on the
+# AraBERT model
+def load_arz_model():
+  nlp = spacy.blank('ar')
+  config = {
+      'model': {
+          '@architectures': 'spacy-transformers.TransformerModel.v3',
+          'name': 'aubmindlab/bert-large-arabertv02'
+      }
+  }
+  nlp.add_pipe('transformer', config=config)
+  nlp.initialize()
+  return nlp
+
 #############
 
 # SCRIPT LOGIC
@@ -85,4 +100,9 @@ df_en.apply(count_type_to_freq, args=(nlp_en, type_to_freq_en))
 plot(type_to_freq_en)
 
 
-# df_arz = load_dataframe('arz')
+# Get and plot data for Egyptian Arabic
+df_arz = load_dataframe('arz')
+nlp_arz = load_arz_model()
+type_to_freq_arz = {}
+df_arz.apply(count_type_to_freq, args=(nlp_arz, type_to_freq_arz))
+plot(type_to_freq_arz)
